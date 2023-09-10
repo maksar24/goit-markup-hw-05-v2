@@ -82,7 +82,7 @@ a, img {
     height: 56px;
     margin: 0 auto;
     padding: 16px 32px;
-    border: 0;
+    border: none;
     border-radius: 4px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     color: var(--primary-white-color);
@@ -452,31 +452,35 @@ a, img {
 }
 
 .footer-input {
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    padding: 8px 16px;
     width: 264px;
     height: 40px;
     border-radius: 4px;
     border: 1px solid var(--primary-white-color);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 
-    background-color: var(--secondary-color);
+    color: var(--primary-white-color);
+    background-color: transparent;
 }
 
 .footer-input::placeholder {
-    font-size: 12px;
-    line-height: 2;
-    letter-spacing: 0.04em; 
-    padding: 8px 16px;
-
     color: var(--primary-white-color);
 }
 
 .footer-button {
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
     display: flex;
-    gap: 16px;
+    justify-content: center;
+    align-items: center;
     max-width: 165px;
     height: 40px;
     padding: 8px 24px;
-    border: 0;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
 
@@ -498,6 +502,7 @@ a, img {
 }
 
 .footer-button-icon {
+    margin-left: 16px;
     fill: currentColor;
 }
 
@@ -662,9 +667,9 @@ a, img {
     padding: 0;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 
     background-color: rgba(231, 233, 252, 1);
-    cursor: pointer;
     transition: background-color var(--main-transition), border var(--main-transition);
 }
 
@@ -684,36 +689,38 @@ a, img {
 }
 
 .modal-caption {
-    min-width: 360px;
-    margin-bottom: 16px;
-
-    text-align: center;
-    color: var(--secondary-color);
     font-weight: 500;
     line-height: 1.5;
+    text-align: center;
+    color: var(--secondary-color);
+    min-width: 360px;
+    margin-bottom: 16px;
+}
+
+.modal-form-row {
+    margin-bottom: 8px;
 }
 
 .modal-form-label {
     display: block;
     margin-bottom: 4px;
-
     color: var(--link-color);
     font-size: 12px;
-    line-height: 1.16;
+    line-height: 1.17;
     letter-spacing: 0.04em;
 }
 
 .modal-form-field {
     position: relative;
-    margin-bottom: 8px;
 }
 
 .modal-form-input {
     width: 100%;
     height: 40px;
-    padding-left: 62px;
+    padding-left: 38px;
     padding-right: 62px;
     border-radius: 4px;
+    background-color: transparent;
     border: 1px solid rgba(46, 47, 66, 0.40);
     outline: transparent;
 
@@ -739,12 +746,20 @@ a, img {
     fill: var(--active-button-color);
 }
 
+.modal-form-textarea {
+    margin-bottom: 16px;
+}
+
 .modal-form-comment {
     display: block;
     width: 100%;
     height: 120px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.40);
+    background-color: transparent;
     padding: 8px 16px;
-    margin-bottom: 16px;
     border-radius: 4px;
     border: 1px solid rgba(46, 47, 66, 0.40);
     outline: transparent;
@@ -757,52 +772,42 @@ a, img {
     border-color: var(--active-button-color);
 }
 
-.modal-form-comment::placeholder {
-    font-size: 12px;
-    line-height: 1.16;
-    letter-spacing: 0.04em;
-    color: rgba(46, 47, 66, 0.40);
+.modal-form-checkbox {
+    margin-bottom: 24px;
 }
 
 .modal-form-agreement {
     display: flex;
-    align-items: center;
     gap: 8px;
-    margin-bottom: 24px;
+    align-items: center;
 }
 
-.modal-form-checkbox {
-    display: flex;
+.modal-form-agreement-checkbox {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 16px;
     height: 16px;
+    fill: transparent;
     border: 1px solid rgba(46, 47, 66, 0.40);
     border-radius: 2px;
     cursor: pointer;
 
-    transition: background-color var(--main-transition), border-color var(--main-transition);
+    transition: background-color var(--main-transition), 
+        border var(--main-transition), 
+        fill var(--main-transition);
 }
 
-input[type='checkbox']:checked + .modal-form-checkbox {
-    border-color: transparent;
+input[type='checkbox']:checked + .modal-form-agreement-checkbox {
+    border: none;
     background-color: var(--active-color);
-}
-
-.modal-form-checkbox-icon {
     fill: var(--secondary-bg-color);
-    opacity: 0;
-    transition: fill var(--main-transition), opacity var(--main-transition);
-}
-
-input[type='checkbox']:checked+.modal-form-checkbox>.modal-form-checkbox-icon {
-    opacity: 1;
 }
 
 .modal-form-agreement-text {
     color: var(--link-color);
     font-size: 12px;
-    line-height: 1.16;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     user-select: none;
 }
