@@ -802,6 +802,11 @@ a, img {
         fill var(--main-transition);
 }
 
+.modal-form-agreement-checkbox:focus,
+.modal-form-agreement-checkbox:hover {
+    border-color: var(--active-color);
+}
+
 input[type='checkbox']:checked + .modal-form-agreement  .modal-form-agreement-checkbox {
     border: none;
     background-color: var(--active-color);
