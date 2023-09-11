@@ -777,15 +777,19 @@ a, img {
 }
 
 .modal-form-agreement {
-    display: flex;
-    gap: 8px;
-    align-items: center;
+    display: block;
+    color: var(--link-color);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    user-select: none;
 }
 
 .modal-form-agreement-checkbox {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin-right: 8px   ;
     width: 16px;
     height: 16px;
     fill: transparent;
@@ -798,18 +802,10 @@ a, img {
         fill var(--main-transition);
 }
 
-input[type='checkbox']:checked + .modal-form-agreement-checkbox {
+input[type='checkbox']:checked + .modal-form-agreement  .modal-form-agreement-checkbox {
     border: none;
     background-color: var(--active-color);
     fill: var(--secondary-bg-color);
-}
-
-.modal-form-agreement-text {
-    color: var(--link-color);
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.04em;
-    user-select: none;
 }
 
 .modal-form-agreement-link {
